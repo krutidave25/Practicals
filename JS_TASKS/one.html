@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
+let object = {};
+let arr = [3,2,4,"abc","pqr", {
+	a:
+	{
+		b:function(){return (3+2);},
+		c:"HELLO",
+		d: 23
+	}
+}];
+let count=1;
+
+let rem = [];
+for(let i=0; i < arr.length;i++)
+{
+	if(typeof arr[i] === "number")
+	{
+		
+		object["key"] = arr[i];
+		object["value"] = count + arr[i];
+		count++;
+		rem.push(object);
+		
+	}
+	else if(typeof arr[i] === "string")
+	{
+		
+		object["key"] = arr[i];
+		object["value"] = arr[i];
+		rem.push(object);
+
+	}
+	else(typeof arr[i] === "object")
+	{
+		for(let j=0;j<arr.length;j++)
+		{
+			let k=0;
+			k=arr[i];
+			object[j]= arr[i][k][j];
+			rem.push(object);
+
+		}
+	}
+}
+console.log(rem);
+
+</script>
+
+</body>
+</html>

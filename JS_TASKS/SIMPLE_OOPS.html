@@ -1,0 +1,41 @@
+<html>
+<body>
+<script type="text/javascript">
+class Animal
+{
+	constructor(types,legs)
+	{
+		this.types=types;
+		this.legs=legs;
+	}
+	makeSound(sound ='Hhurrr')
+	{
+		console.log(sound);
+	}
+	
+	static return1()
+	{
+		return 1;
+	}
+}
+class Cat extends Animal
+{
+	constructor(type,legs,tail)
+	{
+		super(type,legs);
+		this.tail=tail;
+
+	}
+	makeSound(sound="meow")
+	{
+		console.log(sound);
+	};
+}
+let ani = new Animal("mammal",2);
+ani.makeSound();
+let cat1 =new Cat('Mammal',4,2);
+cat1.makeSound();
+console.log(cat1.legs);
+</script>
+</body>
+</html>

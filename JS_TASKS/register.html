@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script>
+var ids = [];
+var pwd = [];
+function f()
+{
+
+	var store=localStorage.getItem("ids");
+	txt1 = document.getElementById("username").value;
+	ids.push(txt1);
+	localStorage.setItem("ids", JSON.stringify(ids));
+	document.getElementById("username").value = "";
+
+	//STORE PASSWORD
+
+	var store_pwd=localStorage.getItem("pwd");
+	txt2 = document.getElementById("password").value;
+	pwd.push(txt2);
+	localStorage.setItem("pwd", JSON.stringify(pwd));
+	document.getElementById("password").value = "";
+
+
+}
+
+
+</script>
+
+<div class="container">
+<div class="main">
+<form id="form_id" method="post" name="myform">
+<label>User Name :</label>
+<input type="text" name="username" id="username" placeholder="USER NAME" />
+<label>Password :</label>
+<input type="password" name="password" id="password" placeholder="PASSWORD" />
+<input type="button" value="REGISTER" id="submit" onclick="f()"/>
+
+</form>
+</div>
+</div>
+</body>
+</html>

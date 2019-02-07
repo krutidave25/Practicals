@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
+function GetDynamicTextBox(value){
+    return '<input name = "DynamicTextBox" type="text" value = "' + value + '" />' +
+            '<input type="button" value="-" onclick = "RemoveTextBox(this)" />' +
+            '<input type="button" value="+" onclick = AddTextBox(this)>'
+}
+function insertAfter(TextBoxContainer2,TextBoxContainer) {
+    
+    var parent = TextBoxContainer2.parentNode;
+
+    if (parent.lastChild == TextBoxContainer2) {
+        parent.appendChild(TextBoxContainer2);
+         div.innerHTML = GetDynamicTextBox("");
+    } else {
+        parent.insertBefore(TextBoxContainer2, TextBoxContainer.nextSibling);
+         div.innerHTML = GetDynamicTextBox("");
+    }
+}
+function AddTextBox(div) {
+
+    var div = document.createElement('DIV');
+    div.innerHTML = GetDynamicTextBox("");
+    document.getElementById("TextBoxContainer").appendChild(div);
+}
+ 
+function RemoveTextBox(div) {
+    document.getElementById("TextBoxContainer").removeChild(div.parentNode);
+}
+ 
+</script>
+<form id="form1" runat="server">
+<input id="btnAdd" type="button" value="INITIAL" onclick="AddTextBox()" />
+<br/>
+<br/>
+<div id="TextBoxContainer">
+</div>
+<div id="TextBoxContainer2">
+</div>
+<br/>
+
+</form>
+</body>
+</html>
